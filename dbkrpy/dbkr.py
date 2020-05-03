@@ -23,8 +23,11 @@ class DBKRPython:
                 try:
                     name = msg['name']
                 except TypeError:
-                    print("서버수가 동일하네요. 잠시후에 다시요청할께요!")
-                    await asyncio.sleep(1800)
+                    if msg.startswith('1'):
+                        raise Exception(f"오류코드 : {code} | {msg}")
+                    else:
+                        print("서버수가 동일하네요. 잠시후에 다시요청할께요!")
+                        await asyncio.sleep(1800)
                 else:
                     message = msg['message']
                     raise Exception(f"오류코드 : {code} | {name} : {message}")

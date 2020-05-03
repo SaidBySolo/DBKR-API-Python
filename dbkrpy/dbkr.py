@@ -16,7 +16,7 @@ class DBKRPython:
             getres = await self.post_guild_count(token,guilds)
             code = getres['code']
             if code == 200:
-                print(f"서버수를 성공적으로 갱신했어요! 현재 서버수는 {guilds}네요.")
+                print(f"서버수를 성공적으로 갱신했어요! 현재 서버수는 {guilds}이네요.")
                 await asyncio.sleep(1800)
             else:
                 msg = getres['message']

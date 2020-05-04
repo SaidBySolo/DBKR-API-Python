@@ -55,6 +55,8 @@ token = "token"
 DBKR = "Korean Bot token"
 
 dbkrpy.DBKRPython(client,DBKR)
+
+client.run(token)
 ```
 
 ## Patch note

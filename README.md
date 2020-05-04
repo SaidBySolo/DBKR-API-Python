@@ -38,7 +38,7 @@ class UpdateGuild(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.token = 'KoreanBot Token paste here'
+        self.token = 'DBKR Token paste here'
         dbkrpy.DBKRPython(self.bot,self.token)
 
 def setup(bot):
@@ -54,12 +54,12 @@ import discord
 from discord.ext import commands
 import dbkrpy
 
-token = "bot token"
+token = "bot token here"
 DBKR_token = "DBKR Token here"
 
 class Bot(commands.Bot):
     def __init__(self):
-        super().__init__(command_prefix="&")
+        super().__init__(command_prefix="Prefix here")
     
 
 if __name__ == '__main__':
@@ -75,10 +75,10 @@ if __name__ == '__main__':
 import discord
 from discord.ext import commands
 
-token = "bot token"
+token = "bot token here"
 DBKR_token = "DBKR Token here"
 
-bot = commands.Bot(command_prefix="$")
+bot = commands.Bot(command_prefix="Prefix here")
 
 dbkrpy.DBKRPython(bot,DBKR_token)
 
@@ -92,7 +92,7 @@ bot.run(token)
 import dbkrpy
 import discord
 
-token = "token"
+token = "bot token here"
 DBKR = "Korean Bot token"
 
 client = discord.Client()

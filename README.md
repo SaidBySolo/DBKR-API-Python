@@ -1,5 +1,7 @@
 # DBKR-API-Python
 
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/dbkrpy)](https://pypi.org/project/dbkrpy/)
+
 ## 사용하시기 전에 제발 읽어주세요.
 
 * 자동으로 루프를 돕니다 task.loop를 안만드셔도됩니다. (30분)

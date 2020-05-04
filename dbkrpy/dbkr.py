@@ -4,12 +4,28 @@ import asyncio
 
 class DBKRPython:
     def __init__(self, bot, token):
+        """
+        클래스 입니다.
+
+        해당 클래스에 인자값을 주시면
+
+        dbkrpy 함수가 봇이 꺼질때 까지 루프를 돌아서
+
+        post_guild_count함수를 이용해서 post 요청을 보냅니다.
+        """
         self.bot = bot
         self.token = token
         loop = asyncio.get_event_loop()
         loop.create_task(self.dbkrpy(bot,token))
     
     async def dbkrpy(self, bot, token):
+        """
+        메인 루프 함수입니다
+
+        봇종료 전까지 30분마다 post_guild_count를 이용해서 post요청을합니다.
+
+        서버수 동일,성공 요청이 아닐시 ``Exception``을 ``raise``합니다.
+        """
         await self.bot.wait_until_ready()
         while not self.bot.is_closed():
             guilds = len(self.bot.guilds)
@@ -33,6 +49,13 @@ class DBKRPython:
                     raise Exception(f"오류코드 : {code} | {name} : {message}")
 
     async def post_guild_count(self, token, guild_count):
+        """
+        post 요청 함수입니다.
+
+        해당 함수를 직접 사용하실경우
+
+        ``token``과 ``사용서버수``를 인자값으로 주셔야합니다.
+        """
         URL = 'https://api.koreanbots.cf/bots/servers'
         headers = {"token":token,"content-type":"application/json"}
         data = {'servers':guild_count}

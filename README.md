@@ -31,6 +31,20 @@ def setup(bot):
 
 ```
 
+##on_message
+```
+import asyncio
+import dbkrpy
+import discord
+
+client = discord.Client()
+
+token = "token"
+DBKR = "Korean Bot toke here"
+
+dbkrpy.DBKRPython(client,DBKR)
+```
+
 ## Patch note
 
 ### 0.1.1

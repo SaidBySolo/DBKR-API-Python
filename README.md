@@ -15,6 +15,7 @@ pip install --upgrade dbkrpy
 ## 사용 예제
 
 ```py
+#Auto Loop
 import dbkrpy
 import discord
 from discord.ext import commands
@@ -33,6 +34,7 @@ def setup(bot):
 
 ## on_message
 ```py
+#Auto Loop
 import asyncio
 import dbkrpy
 import discord

@@ -24,7 +24,9 @@ pip install dbkrpy
 pip install --upgrade dbkrpy
 ```
 
-## 사용 예제
+## 사용 예제들
+
+### Cogs
 
 ```py
 #Auto Loop
@@ -44,10 +46,48 @@ def setup(bot):
 
 ```
 
-## on_message
+### Bot(class)
+
 ```py
 #Auto Loop
-import asyncio
+import discord
+from discord.ext import commands
+import dbkrpy
+
+token = "bot token"
+DBKR_token = "DBKR Token here"
+
+class Bot(commands.Bot):
+    def __init__(self):
+        super().__init__(command_prefix="&")
+    
+
+if __name__ == '__main__':
+    bot = Bot()
+    dbkrpy.DBKRPython(bot,DBKR_token)
+    bot.run(token)
+```
+
+### Bot(not using class)
+
+```py
+#Auto Loop
+import discord
+from discord.ext import commands
+
+token = "bot token"
+DBKR_token = "DBKR Token here"
+
+bot = commands.Bot(command_prefix="$")
+
+dbkrpy.DBKRPython(bot,DBKR_token)
+bot.run(token)
+```
+
+### on_message
+
+```py
+#Auto Loop
 import dbkrpy
 import discord
 

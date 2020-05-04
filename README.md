@@ -40,7 +40,7 @@ import discord
 client = discord.Client()
 
 token = "token"
-DBKR = "Korean Bot toke here"
+DBKR = "Korean Bot token"
 
 dbkrpy.DBKRPython(client,DBKR)
 ```

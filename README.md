@@ -31,8 +31,8 @@ def setup(bot):
 
 ```
 
-##on_message
-```
+## on_message
+```py
 import asyncio
 import dbkrpy
 import discord

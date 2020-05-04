@@ -23,7 +23,7 @@ class UpdateGuild(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.token = 'Token paste here'
+        self.token = 'KoreanBot Token paste here'
         dbkrpy.DBKRPython(self.bot,self.token)
 
 def setup(bot):

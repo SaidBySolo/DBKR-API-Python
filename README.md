@@ -81,6 +81,7 @@ DBKR_token = "DBKR Token here"
 bot = commands.Bot(command_prefix="$")
 
 dbkrpy.DBKRPython(bot,DBKR_token)
+
 bot.run(token)
 ```
 
@@ -91,10 +92,10 @@ bot.run(token)
 import dbkrpy
 import discord
 
-client = discord.Client()
-
 token = "token"
 DBKR = "Korean Bot token"
+
+client = discord.Client()
 
 dbkrpy.DBKRPython(client,DBKR)
 

@@ -24,7 +24,54 @@ pip install dbkrpy
 pip install --upgrade dbkrpy
 ```
 
-## 사용 예제들
+## GetById
+
+불러올수 있는 항목 입니다.
+
+* id(봇 아이디)
+* timestamp(정보 생성일)
+* name(봇 이름)
+* owner(봇 개발자)
+* library(봇 사용 라이브러리)
+* prefix(봇 접두사)
+* votes(봇 하트수)
+* servers(봇 서버수)
+* intro(봇 간단설명)
+* description(봇 설명)
+* web(봇 웹사이트)
+* git(봇 깃)
+* url(봇 초대링크)
+* discord(봇 서포트 디스코드)
+* categories(봇 카테고리)
+* status(봇 상태)
+* avatar(봇 프로필사진)
+* verified(봇 디스코드 인증여부)
+* trusted(봇 신뢰 여부)
+* state(봇 잠금여부)
+
+봇개발자,카테고리는 리스트로 반환됩니다.
+
+## CheckVote
+
+해당유저의 투표여부를 bool형식(True,False)로 반환합니다.
+
+## Page
+
+불러올수 있는 항목 입니다.
+
+* idlist
+* namelist
+* serverslist
+* voteslist
+* introlist
+* avatarlist
+* categorylist
+* taglist
+* statelist
+
+전부 리스트로 반환됩니다.
+
+## 예제
 
 ### Cogs
 
@@ -101,57 +148,28 @@ dbkrpy.UpdateGuild(client,DBKR)
 client.run(token)
 ```
 
-## GetById
-
-### 불러올수있는항목입니다
-
-* id(봇 아이디)
-* timestamp(정보 생성일)
-* name(봇 이름)
-* owner(봇 개발자)
-* library(봇 사용 라이브러리)
-* prefix(봇 접두사)
-* votes(봇 하트수)
-* servers(봇 서버수)
-* intro(봇 간단설명)
-* description(봇 설명)
-* web(봇 웹사이트)
-* git(봇 깃)
-* url(봇 초대링크)
-* discord(봇 서포트 디스코드)
-* categories(봇 카테고리)
-* status(봇 상태)
-* avatar(봇 프로필사진)
-* verified(봇 디스코드 인증여부)
-* trusted(봇 신뢰 여부)
-* state(봇 잠금여부)
-
-## GetById 예제
-
-### 봇 사용
+### Cogs(Page)
 
 ```py
 import dbkrpy
 import discord
 from discord.ext import commands
 
-class DBKRinfo(commands.Cog):
+class BotPage(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
 
-    async def getinfo(self, ctx):
-        info = await dbkrpy.GetById.get_response(538659580855451648)
-        dbkr = dbkrpy.DBKRGetById(info)
-        await ctx.send(dbkr.id)
+    async def getpage():
+        page = await dbkrpy.Page.get_response(1)
+        pagelist = Page(page)
+        await ctx.send(f"{''.join(pagelist.idlist)}")
 
 def setup(bot):
-    bot.add_cog(DBKRinfo(bot))
+    bot.add_cog(BotPage(bot))
 ```
 
-## checkvote 예제
-
-### 봇 사용
+### Cogs(CheckVote)
 
 ```py
 import dbkrpy
@@ -172,29 +190,6 @@ class ChkVote(commands.Cog):
 
 def setup(bot):
     bot.add_cog(Chkvote(bot))
-```
-
-## Page 예제
-
-### 봇 사용
-
-```py
-import dbkrpy
-import discord
-from discord.ext import commands
-
-class BotPage(commands.Cog):
-
-    def __init__(self, bot):
-        self.bot = bot
-
-    async def getpage():
-        page = await dbkrpy.Page.get_response(1)
-        pagelist = Page(page)
-        await ctx.send(f"{''.join(pagelist.idlist)}")
-
-def setup(bot):
-    bot.add_cog(BotPage(bot))
 ```
 
 ## Patch note

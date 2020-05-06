@@ -34,7 +34,7 @@ import dbkrpy
 import discord
 from discord.ext import commands
 
-class UpdateGuild(commands.Cog):
+class GuildCount(commands.Cog):
 
     def __init__(self, bot):
         bot = bot
@@ -42,7 +42,7 @@ class UpdateGuild(commands.Cog):
         dbkrpy.UpdateGuild(bot,token)
 
 def setup(bot):
-    bot.add_cog(UpdateGuild(bot))
+    bot.add_cog(GuildCount(bot))
 
 ```
 

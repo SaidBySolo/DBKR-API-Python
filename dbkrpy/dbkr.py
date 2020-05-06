@@ -2,7 +2,7 @@ import aiohttp
 import asyncio
 
 
-class UpdateGuild:
+class UpdateGuilds:
     def __init__(self, bot, token, log=True):
         """
         클래스 입니다.

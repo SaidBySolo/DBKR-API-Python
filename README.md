@@ -2,7 +2,19 @@
 
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/dbkrpy)](https://pypi.org/project/dbkrpy/)
 
+## 목차
+
+* [설치방법](#설치방법)
+* [업데이트방법](#업데이트방법)
+* [GetById](#GetById)
+* [CheckVote](#CheckVote)
+* [Page](#Page)
+* [예제](#예제)
+* [Patch note](#patch-note)
+
 ## 사용하시기 전에 제발 읽어주세요
+
+### UpdateGuilds 관련
 
 * 자동으로 루프를 돕니다 task.loop를 안만드셔도됩니다. (30분)
 
@@ -36,12 +48,12 @@ pip install --upgrade dbkrpy
 * prefix(봇 접두사)
 * votes(봇 하트수)
 * servers(봇 서버수)
-* intro(봇 간단설명)
+* intro(봇 소개)
 * description(봇 설명)
 * web(봇 웹사이트)
 * git(봇 깃)
 * url(봇 초대링크)
-* discord(봇 서포트 디스코드)
+* discord(봇 지원 디스코드 서버)
 * categories(봇 카테고리)
 * status(봇 상태)
 * avatar(봇 프로필사진)
@@ -49,31 +61,41 @@ pip install --upgrade dbkrpy
 * trusted(봇 신뢰 여부)
 * state(봇 잠금여부)
 
-봇개발자,카테고리는 리스트로 반환됩니다.
+봇 개발자,카테고리는 리스트로 반환됩니다.
 
 ## CheckVote
 
-해당유저의 투표여부를 bool형식(True,False)로 반환합니다.
+해당 유저의 투표 여부를 bool 형식(True, False)으로 반환합니다.
 
 ## Page
 
 불러올수 있는 항목 입니다.
 
-* idlist
-* namelist
-* serverslist
-* voteslist
-* introlist
-* avatarlist
-* categorylist
-* taglist
-* statelist
+* idlist(해당 페이지의 봇 id 리스트)
+* namelist(해당 페이지의 봇 이름 리스트)
+* serverslist(해당 페이지의 봇 서버수 리스트)
+* voteslist(해당 페이지의 봇 투표 리스트)
+* introlist(해당 페이지의 봇 소개 리스트)
+* avatarlist(해당 페이지의 봇 아바타 리스트)
+* categorylist(해당 페이지의 봇 카테고리 리스트)
+* taglist(해당 페이지의 봇 태그 리스트)
+* statelist(해당 페이지의 봇 상태 리스트)
 
-전부 리스트로 반환됩니다.
+전부 투표수가 많은 순서대로 10개씩 리스트로 반환됩니다.
 
 ## 예제
 
-### Cogs
+### 예제 빠른이동
+
+* [Cogs(UpdateGuild)](#Cogs(UpdateGuild))
+* [Bot(Using class,UpdateGuilds](#botnot-using-classupdateguilds)
+* [Bot(Not using class,UpdateGuilds)](#botnot-using-classupdateguilds)
+* [Client(on_message,UpdateGuilds)](#clientonmessageupdateguilds)
+* [Cogs(GetById)](#cogsgetbyid)
+* [Cogs(Page)](#cogspage)
+* [Cogs(CheckVote)](#cogscheckvote)
+
+### Cogs(UpdateGuild)
 
 ```py
 #Auto Loop
@@ -86,14 +108,14 @@ class GuildCount(commands.Cog):
     def __init__(self, bot):
         bot = bot
         token = 'DBKR Token paste here'
-        dbkrpy.UpdateGuild(bot,token)
+        dbkrpy.UpdateGuilds(bot,token)
 
 def setup(bot):
     bot.add_cog(GuildCount(bot))
 
 ```
 
-### Bot(class)
+### Bot(Using class,UpdateGuilds)
 
 ```py
 #Auto Loop
@@ -102,7 +124,7 @@ from discord.ext import commands
 import dbkrpy
 
 token = "bot token here"
-DBKR_token = "DBKR Token here"
+DBKR_token = "DBKR Token paste here"
 
 class Bot(commands.Bot):
     def __init__(self):
@@ -110,28 +132,29 @@ class Bot(commands.Bot):
 
 if __name__ == '__main__':
     bot = Bot()
-    dbkrpy.UpdateGuild(bot,DBKR_token)
+    dbkrpy.UpdateGuilds(bot,DBKR_token)
     bot.run(token)
 ```
 
-### Bot(not using class)
+### Bot(Not using class,UpdateGuilds)
 
 ```py
 #Auto Loop
+import dbkrpy
 import discord
 from discord.ext import commands
 
 token = "bot token here"
-DBKR_token = "DBKR Token here"
+DBKR_token = "DBKR Token paste here"
 
 bot = commands.Bot(command_prefix="Prefix here")
 
-dbkrpy.UpdateGuild(bot,DBKR_token)
+dbkrpy.UpdateGuilds(bot,DBKR_token)
 
 bot.run(token)
 ```
 
-### Client(on_message)
+### Client(on_message,UpdateGuilds)
 
 ```py
 #Auto Loop
@@ -139,11 +162,11 @@ import dbkrpy
 import discord
 
 token = "bot token here"
-DBKR = "Korean Bot token"
+DBKR_token = "DBKR Token paste here"
 
 client = discord.Client()
 
-dbkrpy.UpdateGuild(client,DBKR)
+dbkrpy.UpdateGuilds(client,DBKR_token)
 
 client.run(token)
 ```
@@ -176,7 +199,7 @@ import dbkrpy
 import discord
 from discord.ext import commands
 
-class BotPage(commands.Cog):
+class DBKRPage(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -187,7 +210,7 @@ class BotPage(commands.Cog):
         await ctx.send(f"{''.join(pagelist.idlist)}")
 
 def setup(bot):
-    bot.add_cog(BotPage(bot))
+    bot.add_cog(DBKRPage(bot))
 ```
 
 ### Cogs(CheckVote)
@@ -197,7 +220,7 @@ import dbkrpy
 import discord
 from discord.ext import commands
 
-class ChkVote(commands.Cog):
+class DBKRChkVote(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -210,7 +233,7 @@ class ChkVote(commands.Cog):
         await ctx.send(dbkr)
 
 def setup(bot):
-    bot.add_cog(Chkvote(bot))
+    bot.add_cog(DBKRChkVote(bot))
 ```
 
 ## Patch note
@@ -235,7 +258,7 @@ def setup(bot):
 
 ### 0.2.1
 
-* 핫픽스:모듈 임포트 오류 수정
+* 핫픽스: 모듈 임포트 오류 수정
 
 ### 0.2.0
 

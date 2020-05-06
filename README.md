@@ -85,7 +85,7 @@ dbkrpy.DBKRPython(bot,DBKR_token)
 bot.run(token)
 ```
 
-### on_message
+### Client(on_message)
 
 ```py
 #Auto Loop

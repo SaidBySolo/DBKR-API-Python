@@ -95,7 +95,7 @@ pip install --upgrade dbkrpy
 * [Cogs(Page)](#cogspage)
 * [Cogs(CheckVote)](#cogscheckvote)
 
-### Cogs(UpdateGuild)
+### Cogs(UpdateGuilds)
 
 ```py
 #Auto Loop

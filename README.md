@@ -149,7 +149,9 @@ def setup(bot):
     bot.add_cog(DBKRinfo(bot))
 ```
 
-### checkvote 예제
+## checkvote 예제
+
+### 봇 사용
 
 ```py
 import dbkrpy
@@ -170,7 +172,36 @@ def setup(bot):
     bot.add_cog(Chkvote(bot))
 ```
 
+## Page 예제
+
+### 봇 사용
+
+```py
+import dbkrpy
+import discord
+from discord.ext import commands
+
+class ChkVote(commands.Cog):
+
+    def __init__(self, bot):
+        self.bot = bot
+
+    async def main():
+        page = await dbkrpy.Page.get_response(1)
+        pagelist = Page(page)
+        await ctx.send(f"{''.join(page.idlist)}")
+
+def setup(bot):
+    bot.add_cog(Chkvote(bot))
+```
+
 ## Patch note
+
+### 0.4.0
+
+* 봇 페이지 확인가능
+
+* 약간의 최적화
 
 ### 0.3.0
 

@@ -13,11 +13,12 @@ class CheckVote:
         async with aiohttp.ClientSession() as cs:
             async with cs.get(URL,headers=headers) as r:
                 response = await r.json()
-                return response
+                if response['code'] == 200:
+                    return response
+                else:
+                    raise Exception(f"{response}")
 
     def checkvote(self, response):
-        if response['code'] == 200:
             return response['voted']
-        else:
-            return response
+
             

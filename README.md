@@ -164,7 +164,9 @@ class ChkVote(commands.Cog):
         self.bot = bot
 
     async def getvote(self, ctx):
-        info = await dbkrpy.CheckVote.get_response(538659580855451648)
+        token = "DBKR API token"
+        userid = "user id"
+        info = await dbkrpy.CheckVote.get_response(token,userid)
         dbkr = dbkrpy.CheckVote(info)
         await ctx.send(dbkr)
 

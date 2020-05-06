@@ -141,8 +141,8 @@ class UpdateGuild(commands.Cog):
         self.bot = bot
 
     async def getinfo(self, ctx):
-        info = await dbkrpy.Getbyid.get_response(538659580855451648)
-        dbkr = dbkrpy.DBKRGetbyid(info)
+        info = await dbkrpy.GetById.get_response(538659580855451648)
+        dbkr = dbkrpy.DBKRGetById(info)
         await ctx.send(dbkr.id)
 
 def setup(bot):

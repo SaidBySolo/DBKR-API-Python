@@ -6,8 +6,8 @@ class CheckVote:
     def __init__(self, response):
         self.check = self.checkvote(response)
 
-    @classmethod
-    async def get_response(cls, token, user_id):
+    @staticmethod
+    async def get_response(token, user_id):
         URL = f'https://api.koreanbots.cf/bots/voted/{user_id}'
         headers = {"token":token,"content-type":"application/json"}
         async with aiohttp.ClientSession() as cs:

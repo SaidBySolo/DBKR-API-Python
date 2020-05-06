@@ -199,6 +199,10 @@ def setup(bot):
 
 ## Patch note
 
+### 0.4.1
+
+* get_reponse함수가 classmethod에서 staticmethod로 변경되었습니다.
+
 ### 0.4.0
 
 * 봇 페이지 확인가능

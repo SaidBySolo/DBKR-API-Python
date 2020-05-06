@@ -5,6 +5,14 @@ class Page:
 
     def __init__(self, response):
         self.idlist = self.sort_id(response)
+        self.namelist = self.sort_name(response)
+        self.serverslist = self.sort_servers(response)
+        self.voteslist = self.sort_votes(response)
+        self.introlist = self.sort_intro(response)
+        self.avatarlist = self.sort_avatar(response)
+        self.categorylist = self.sort_category(response)
+        self.taglist = self.sort_tag(response)
+        self.statelist = self.sort_state(response)
 
     @staticmethod
     async def get_response(page):
@@ -12,43 +20,52 @@ class Page:
         async with aiohttp.ClientSession() as cs:
             async with cs.get(URL) as r:
                 response = await r.json()
-                return response
+                if response['code'] == 200:
+                    return response
+                else:
+                    raise Exception(f"{response}")
 
     def sort_id(self,response):
-        if response['code'] == 200:
             data = response['data']
-            idlist = [i for i in data]
+            idlist = [i['id'] for i in data]
             return idlist
 
     def sort_name(self,response):
-        if response['code'] == 200:
             data = response['data']
-
+            namelist = [n['name'] for n in data]
+            return namelist
+            
     def sort_servers(self,response):
-        if response['code'] == 200:
             data = response['data']
+            serverslist = [s['servers'] for s in data]
+            return serverslist
 
     def sort_votes(self,response):
-        if response['code'] == 200:
             data = response['data']
+            voteslist = [v['votes'] for v in data]
+            return voteslist
 
     def sort_intro(self,response):
-        if response['code'] == 200:
             data = response['data']
+            introlist = [i['intro'] for i in data]
+            return introlist
 
     def sort_avatar(self,response):
-        if response['code'] == 200:
             data = response['data']
+            avatarlist = [a['avatar'] for a in data]
+            return avatarlist
 
     def sort_category(self,response):
-        if response['code'] == 200:
             data = response['data']
+            categorylist = [c['category'] for c in data]
+            return categorylist
 
     def sort_tag(self,response):
-        if response['code'] == 200:
             data = response['data']
+            taglist = [t['tag'] for t in data]
+            return taglist
 
     def sort_state(self,response):
-        if response['code'] == 200:
             data = response['data']
-
+            statelist = [s['state'] for s in data]
+            return statelist

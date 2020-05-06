@@ -31,7 +31,10 @@ class GetById:
         async with aiohttp.ClientSession() as cs:
             async with cs.get(URL) as r:
                 response = await r.json()
-                return response
+                if response['code'] == 200:
+                    return response
+                else:
+                    raise Exception(f"{response}")
 
     def bot_id(self, response):
         data = response['data']
@@ -46,9 +49,6 @@ class GetById:
         data = response['data']
         bot_name = data['name']
         return bot_name
-
-    def bot_timestamp(self, response):
-        data = response['data']
 
     def bot_owner(self, response):
         data = response['data']

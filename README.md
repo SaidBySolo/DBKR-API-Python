@@ -2,7 +2,7 @@
 
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/dbkrpy)](https://pypi.org/project/dbkrpy/)
 
-## 사용하시기 전에 제발 읽어주세요.
+## 사용하시기 전에 제발 읽어주세요
 
 * 자동으로 루프를 돕니다 task.loop를 안만드셔도됩니다. (30분)
 
@@ -37,9 +37,9 @@ from discord.ext import commands
 class UpdateGuild(commands.Cog):
 
     def __init__(self, bot):
-        self.bot = bot
-        self.token = 'DBKR Token paste here'
-        dbkrpy.DBKRPython(self.bot,self.token)
+        bot = bot
+        token = 'DBKR Token paste here'
+        dbkrpy.DBKRPython(bot,token)
 
 def setup(bot):
     bot.add_cog(UpdateGuild(bot))
@@ -60,7 +60,6 @@ DBKR_token = "DBKR Token here"
 class Bot(commands.Bot):
     def __init__(self):
         super().__init__(command_prefix="Prefix here")
-    
 
 if __name__ == '__main__':
     bot = Bot()
@@ -102,7 +101,53 @@ dbkrpy.DBKRPython(client,DBKR)
 client.run(token)
 ```
 
+### GetById
+
+불러올수있는항목입니다.
+
+* id(봇 아이디)
+* timestamp(정보 생성일)
+* name(봇 이름)
+* owner(봇 개발자)
+* library(봇 사용 라이브러리)
+* prefix(봇 접두사)
+* votes(봇 하트수)
+* servers(봇 서버수)
+* intro(봇 간단설명)
+* description(봇 설명)
+* web(봇 웹사이트)
+* git(봇 깃)
+* url(봇 초대링크)
+* discord(봇 서포트 디스코드)
+* categories(봇 카테고리)
+* status(봇 상태)
+* avatar(봇 프로필사진)
+* verified(봇 디스코드 인증여부)
+* trusted(봇 신뢰 여부)
+* state(봇 잠금여부)
+
+## GetById 예제
+
+```py
+import dbkrpy
+
+info = dbkrpy.DBKRGetbyid.get_info(538659580855451648)
+dbkr = dbkrpy.DBKRGetbyid(info)
+
+print(dbkr.id)
+print(dbkr.owner)
+print(dbkr.intro)
+```
+
 ## Patch note
+
+### 0.2.1
+
+* 핫픽스:모듈 임포트 오류 수정
+
+### 0.2.0
+
+* GetById 엔드포인트추가
 
 ### 0.1.2
 

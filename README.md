@@ -148,6 +148,27 @@ dbkrpy.UpdateGuild(client,DBKR)
 client.run(token)
 ```
 
+### Cogs(GetById)
+
+```py
+import dbkrpy
+import discord
+from discord.ext import commands
+
+class DBKRinfo(commands.Cog):
+
+    def __init__(self, bot):
+        self.bot = bot
+
+    async def getinfo(self, ctx):
+        info = await dbkrpy.GetById.get_response(538659580855451648)
+        dbkr = dbkrpy.DBKRGetById(info)
+        await ctx.send(dbkr.id)
+
+def setup(bot):
+    bot.add_cog(DBKRinfo(bot))
+```
+
 ### Cogs(Page)
 
 ```py

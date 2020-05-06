@@ -101,9 +101,9 @@ dbkrpy.DBKRPython(client,DBKR)
 client.run(token)
 ```
 
-### GetById
+## GetById
 
-불러올수있는항목입니다.
+### 불러올수있는항목입니다.
 
 * id(봇 아이디)
 * timestamp(정보 생성일)
@@ -127,6 +127,28 @@ client.run(token)
 * state(봇 잠금여부)
 
 ## GetById 예제
+
+### 봇 사용
+```py
+import dbkrpy
+import discord
+from discord.ext import commands
+
+class UpdateGuild(commands.Cog):
+
+    def __init__(self, bot):
+        self.bot = bot
+        
+    async def getvote(self, ctx):
+        info = dbkrpy.DBKRGetbyid.get_response(538659580855451648)
+        dbkr = dbkrpy.DBKRGetbyid(info)
+        await ctx.send(dbkr.id)
+        
+def setup(bot):
+    bot.add_cog(UpdateGuild(bot))
+```
+
+### 일반적인 사용
 
 ```py
 import dbkrpy

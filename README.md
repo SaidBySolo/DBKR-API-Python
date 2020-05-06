@@ -181,18 +181,18 @@ import dbkrpy
 import discord
 from discord.ext import commands
 
-class ChkVote(commands.Cog):
+class BotPage(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
 
-    async def main():
+    async def getpage():
         page = await dbkrpy.Page.get_response(1)
         pagelist = Page(page)
         await ctx.send(f"{''.join(page.idlist)}")
 
 def setup(bot):
-    bot.add_cog(Chkvote(bot))
+    bot.add_cog(BotPage(bot))
 ```
 
 ## Patch note

@@ -238,6 +238,10 @@ def setup(bot):
 
 ## Patch note
 
+### 0.4.2
+
+* UpdateGuild 클래스가 UpdateGuilds로 변경
+
 ### 0.4.1
 
 * get_reponse함수가 classmethod에서 staticmethod로 변경되었습니다.

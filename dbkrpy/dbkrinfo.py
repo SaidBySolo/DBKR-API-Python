@@ -1,7 +1,7 @@
 import aiohttp
 import asyncio
 
-class DBKRGetbyid:
+class GetById:
 	
 	def __init__(self, response):
 		self.id = self.bot_id(response)
@@ -24,12 +24,6 @@ class DBKRGetbyid:
 		self.verified = self.bot_verified(response)
 		self.trusted = self.bot_trusted(response)
 		self.state = self.bot_state(response)
-
-	@classmethod
-	def get_info(cls, bot_id):
-		loop = asyncio.get_event_loop()
-		info = loop.run_until_complete(cls.get_response(bot_id))
-		return info
 
 	@classmethod
 	async def get_response(cls, bot_id):

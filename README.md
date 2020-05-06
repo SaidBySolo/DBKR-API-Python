@@ -39,7 +39,7 @@ class UpdateGuild(commands.Cog):
     def __init__(self, bot):
         bot = bot
         token = 'DBKR Token paste here'
-        dbkrpy.DBKRPython(bot,token)
+        dbkrpy.UpdateGuild(bot,token)
 
 def setup(bot):
     bot.add_cog(UpdateGuild(bot))
@@ -63,7 +63,7 @@ class Bot(commands.Bot):
 
 if __name__ == '__main__':
     bot = Bot()
-    dbkrpy.DBKRPython(bot,DBKR_token)
+    dbkrpy.UpdateGuild(bot,DBKR_token)
     bot.run(token)
 ```
 
@@ -79,7 +79,7 @@ DBKR_token = "DBKR Token here"
 
 bot = commands.Bot(command_prefix="Prefix here")
 
-dbkrpy.DBKRPython(bot,DBKR_token)
+dbkrpy.UpdateGuild(bot,DBKR_token)
 
 bot.run(token)
 ```
@@ -96,14 +96,14 @@ DBKR = "Korean Bot token"
 
 client = discord.Client()
 
-dbkrpy.DBKRPython(client,DBKR)
+dbkrpy.UpdateGuild(client,DBKR)
 
 client.run(token)
 ```
 
 ## GetById
 
-### 불러올수있는항목입니다.
+### 불러올수있는항목입니다
 
 * id(봇 아이디)
 * timestamp(정보 생성일)
@@ -129,6 +129,7 @@ client.run(token)
 ## GetById 예제
 
 ### 봇 사용
+
 ```py
 import dbkrpy
 import discord
@@ -138,30 +139,46 @@ class UpdateGuild(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        
-    async def getvote(self, ctx):
-        info = await dbkrpy.DBKRGetbyid.get_response(538659580855451648)
+
+    async def getinfo(self, ctx):
+        info = await dbkrpy.Getbyid.get_response(538659580855451648)
         dbkr = dbkrpy.DBKRGetbyid(info)
         await ctx.send(dbkr.id)
-        
+
 def setup(bot):
     bot.add_cog(UpdateGuild(bot))
 ```
 
-### 일반적인 사용
+### checkvote 예제
 
 ```py
 import dbkrpy
+import discord
+from discord.ext import commands
 
-info = dbkrpy.DBKRGetbyid.get_info(538659580855451648)
-dbkr = dbkrpy.DBKRGetbyid(info)
+class ChkVote(commands.Cog):
 
-print(dbkr.id)
-print(dbkr.owner)
-print(dbkr.intro)
+    def __init__(self, bot):
+        self.bot = bot
+
+    async def getvote(self, ctx):
+        info = await dbkrpy.CheckVote.get_response(538659580855451648)
+        dbkr = dbkrpy.CheckVote(info)
+        await ctx.send(dbkr)
+
+def setup(bot):
+    bot.add_cog(Chkvote(bot))
 ```
 
 ## Patch note
+
+### 0.3.0
+
+* 클래스명 변경
+
+* 로깅출력 여부 설정가능
+
+* 투표 여부 확인가능
 
 ### 0.2.1
 

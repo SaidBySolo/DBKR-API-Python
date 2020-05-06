@@ -140,7 +140,7 @@ class UpdateGuild(commands.Cog):
         self.bot = bot
         
     async def getvote(self, ctx):
-        info = dbkrpy.DBKRGetbyid.get_response(538659580855451648)
+        info = await dbkrpy.DBKRGetbyid.get_response(538659580855451648)
         dbkr = dbkrpy.DBKRGetbyid(info)
         await ctx.send(dbkr.id)
         

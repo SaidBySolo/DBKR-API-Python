@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-
+from .dbkrapiurl import PostURL
 
 class UpdateGuilds:
     def __init__(self, bot, token, log=True):
@@ -18,7 +18,7 @@ class UpdateGuilds:
         self.bot = bot
         self.token = token
         loop = asyncio.get_event_loop()
-        loop.create_task(self.main_loop(bot,token,log))
+        loop.create_task(self.main_loop(bot, token, log))
     
     async def main_loop(self, bot, token, log):
         """
@@ -64,7 +64,7 @@ class UpdateGuilds:
 
         ``token``과 ``사용서버수``를 인자값으로 주셔야합니다.
         """
-        URL = 'https://api.koreanbots.cf/bots/servers'
+        URL = PostURL['dbkrpostguild']
         headers = {"token":token,"content-type":"application/json"}
         data = {'servers':guild_count}
         async with aiohttp.ClientSession() as cs:

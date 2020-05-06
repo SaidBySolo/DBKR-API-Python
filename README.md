@@ -238,6 +238,10 @@ def setup(bot):
 
 ## Patch note
 
+### 0.4.3
+
+* api링크 dict로 분리
+
 ### 0.4.2
 
 * UpdateGuild 클래스가 UpdateGuilds로 변경

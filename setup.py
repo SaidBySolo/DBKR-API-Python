@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="dbkrpy",
-    version="0.4.2",
+    version="0.4.3",
     license='MIT',
     author="Ryu ju heon",
     author_email="SaidBySolo@gmail.com",

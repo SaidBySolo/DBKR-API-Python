@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+from .dbkrapiurl import PostURL
 
 class Page:
 
@@ -16,7 +17,7 @@ class Page:
 
     @staticmethod
     async def get_response(page):
-        URL = f'https://api.koreanbots.cf/bots/get?page={page}'
+        URL = f"{PostURL['dbkrpage']}{page}"
         async with aiohttp.ClientSession() as cs:
             async with cs.get(URL) as r:
                 response = await r.json()

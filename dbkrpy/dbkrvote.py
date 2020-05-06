@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+from .dbkrapiurl import PostURL
 
 class CheckVote:
 
@@ -8,7 +9,7 @@ class CheckVote:
 
     @staticmethod
     async def get_response(token, user_id):
-        URL = f'https://api.koreanbots.cf/bots/voted/{user_id}'
+        URL = f'{PostURL["dbkrvote"]}{user_id}'
         headers = {"token":token,"content-type":"application/json"}
         async with aiohttp.ClientSession() as cs:
             async with cs.get(URL,headers=headers) as r:

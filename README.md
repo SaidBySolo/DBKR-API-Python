@@ -191,7 +191,7 @@ class BotPage(commands.Cog):
     async def getpage():
         page = await dbkrpy.Page.get_response(1)
         pagelist = Page(page)
-        await ctx.send(f"{''.join(page.idlist)}")
+        await ctx.send(f"{''.join(pagelist.idlist)}")
 
 def setup(bot):
     bot.add_cog(BotPage(bot))

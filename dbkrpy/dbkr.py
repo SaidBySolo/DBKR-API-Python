@@ -56,7 +56,8 @@ class UpdateGuilds:
                     message = msg['message']
                     raise Exception(f"오류코드 : {code} | {name} : {message}")
 
-    async def post_guild_count(self, token, guild_count):
+    @staticmethod
+    async def post_guild_count(token, guild_count):
         """
         post 요청 함수입니다.
 

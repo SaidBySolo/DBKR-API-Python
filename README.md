@@ -238,6 +238,10 @@ def setup(bot):
 
 ## Patch note
 
+### 0.4.5
+
+* 핫픽스:UpdateGuilds에 post_guild_count함수 staticmethod로 변경
+
 ### 0.4.4
 
 * 핫픽스:패키지에서 클래스 이름 변경으로 UpdateGuilds가 임포트 되지않았던 문제

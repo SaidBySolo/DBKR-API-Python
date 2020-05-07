@@ -1,5 +1,6 @@
 import dbkrpy
 import os
+import asyncio
 
 token = os.environ['token']
 botid = os.environ['bot_id']
@@ -37,3 +38,6 @@ async def checkall():
         pass
 
     assert(checklist == 0)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(checkall())

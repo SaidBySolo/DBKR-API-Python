@@ -38,6 +38,3 @@ async def checkall():
         pass
 
     assert(len(checklist) == 0)
-
-loop = asyncio.get_event_loop()
-loop.run_until_complete(checkall())

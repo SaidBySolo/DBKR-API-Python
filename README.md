@@ -1,5 +1,6 @@
 # DBKR-API-Python
 
+[![Build Status](https://travis-ci.com/SaidBySolo/DBKR-API-Python.svg?branch=master)](https://travis-ci.com/SaidBySolo/DBKR-API-Python)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/dbkrpy)](https://pypi.org/project/dbkrpy/)
 
 ## 목차

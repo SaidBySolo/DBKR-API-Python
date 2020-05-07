@@ -238,6 +238,10 @@ def setup(bot):
 
 ## Patch note
 
+### 0.4.4
+
+* 핫픽스:패키지에서 클래스 이름 변경으로 UpdateGuilds가 임포트 되지않았던 문제
+
 ### 0.4.3
 
 * api링크 dict로 분리

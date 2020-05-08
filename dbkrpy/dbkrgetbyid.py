@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+from .dbkrapiurl import PostURL
 
 class GetById:
 
@@ -27,8 +28,8 @@ class GetById:
 
     @staticmethod
     async def get_response(bot_id):
-        URL = f'https://api.koreanbots.cf/bots/get/{bot_id}'
         async with aiohttp.ClientSession() as cs:
+            URL = f"{PostURL['dbkrgetbyid']}{bot_id}"
             async with cs.get(URL) as r:
                 response = await r.json()
                 return response

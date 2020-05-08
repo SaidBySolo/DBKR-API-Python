@@ -21,5 +21,3 @@ class CheckVote:
 
     def checkvote(self, response):
             return response['voted']
-
-            

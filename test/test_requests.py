@@ -20,11 +20,19 @@ async def test_response():
     except Exception:
         checklist.append("GBI")
     try:
-        await dbkrpy.Page.get_response(1)
+        await dbkrpy.Page.get_response()
     except Exception:
         checklist.append("P")
     try:
         await dbkrpy.UpdateGuilds.post_guild_count(token,userid)
     except Exception:
         checklist.append("UG")
+    try:
+        await dbkrpy.Search.get_response("다")
+    except Exception:
+        checklist.append("S")
+    try:
+        await dbkrpy.Categories.get_response("관리")
+    except Exception:
+        checklist.append("S")
     assert(len(checklist) == 0)

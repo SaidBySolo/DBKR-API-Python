@@ -29,7 +29,7 @@ class GetById:
     @staticmethod
     async def get_response(bot_id):
         async with aiohttp.ClientSession() as cs:
-            URL = f"{PostURL['dbkrinfo']}{bot_id}"
+            URL = f"{PostURL['dbkrgetbyid']}{bot_id}"
             async with cs.get(URL) as r:
                 response = await r.json()
                 if response['code'] == 200:

@@ -1,6 +1,8 @@
+mainurl = "https://api.koreanbots.cf"
 PostURL = {
-    'dbkrpostguild':'https://api.koreanbots.cf/bots/servers',
-    'dbkrpage':'https://api.koreanbots.cf/bots/get?page=',
-    'dbkrinfo':'https://api.koreanbots.cf/bots/get/',
-    'dbkrvote':'https://api.koreanbots.cf/bots/voted/'
+    'dbkrpostguild': f'{mainurl}/bots/servers',
+    'dbkrsearch': f'{mainurl}/bots/search',    
+    'dbkrgetbyid': f'{mainurl}/bots/get/',
+    'dbkrvote': f'{mainurl}/bots/voted/',
+    'dbkrcategories': f'{mainurl}/bots/category/'
 }

@@ -3,7 +3,7 @@ import asyncio
 from .dbkrsort import Sort
 from .dbkrapiurl import PostURL
 
-class Page:
+class Search:
 
     def __init__(self, response):
         self.idlist = Sort.sort_id(response)
@@ -17,8 +17,8 @@ class Page:
         self.statelist = Sort.sort_state(response)
 
     @staticmethod
-    async def get_response(page=1):
-        URL = f"{PostURL['dbkrgetbyid']}?page={page}"
+    async def get_response(query, page=1):
+        URL = f"{PostURL['dbkrsearch']}?q={query}&page={page}"
         async with aiohttp.ClientSession() as cs:
             async with cs.get(URL) as r:
                 response = await r.json()
@@ -26,3 +26,4 @@ class Page:
                     return response
                 else:
                     raise Exception(f"{response}")
+

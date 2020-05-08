@@ -18,7 +18,7 @@ class Page:
 
     @staticmethod
     async def get_response(page=1):
-        URL = f"{PostURL['dbkrsearch']}?page={page}"
+        URL = f"{PostURL['dbkrgetbyid']}?page={page}"
         async with aiohttp.ClientSession() as cs:
             async with cs.get(URL) as r:
                 response = await r.json()

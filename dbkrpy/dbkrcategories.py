@@ -18,7 +18,7 @@ class Categories:
 
     @staticmethod
     async def get_response(query, page=1):
-        URL = f"{PostURL['dbkrcategories']}{query}?page={1}"
+        URL = f"{PostURL['dbkrcategories']}{query}?page={page}"
         async with aiohttp.ClientSession() as cs:
             async with cs.get(URL) as r:
                 response = await r.json()

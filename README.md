@@ -239,6 +239,18 @@ def setup(bot):
 
 ## Patch note
 
+### 0.5.0
+
+* 카테고리 검색 엔드포인트 래핑
+
+* 검색 엔드포인트 래핑
+
+* 페이지는 지금부터 기본으로 1페이지로 검색됩니다.
+
+* 파일 이름들이 변경되었습니다.
+
+* 
+
 ### 0.4.5
 
 * 핫픽스:UpdateGuilds에 post_guild_count함수 staticmethod로 변경

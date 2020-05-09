@@ -28,7 +28,7 @@ async def test_response():
     except Exception:
         checklist.append("UG")
     try:
-        await dbkrpy.Search.get_response("다")
+        await dbkrpy.Search.get_response(".")
     except Exception:
         checklist.append("S")
     try:

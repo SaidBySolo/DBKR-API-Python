@@ -107,9 +107,9 @@ from discord.ext import commands
 class GuildCount(commands.Cog):
 
     def __init__(self, bot):
-        bot = bot
-        token = 'DBKR Token paste here'
-        dbkrpy.UpdateGuilds(bot,token)
+        self.bot = bot
+        self.token = 'DBKR Token paste here'
+        dbkrpy.UpdateGuilds(self.bot,self.token)
 
 def setup(bot):
     bot.add_cog(GuildCount(bot))

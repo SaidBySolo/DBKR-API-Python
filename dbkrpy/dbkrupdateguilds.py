@@ -60,7 +60,9 @@ class UpdateGuilds:
     async def post_guild_count(token, guild_count):
         """
         post 요청 함수입니다.
+
         해당 함수를 직접 사용하실경우
+        
         ``token``과 ``사용서버수``를 인자값으로 주셔야합니다.
         """
         URL = PostURL['dbkrpostguild']

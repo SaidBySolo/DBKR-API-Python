@@ -1,6 +1,10 @@
 # DBKR-API-Python
 
-**__파이썬 공식 SDK가 나왔습니다. [링크](https://github.com/koreanbots/py-sdk) 공식지원되는 패키지를 다운받으세요__**  
+**__파이썬 공식 SDK가 나왔습니다. [링크](https://github.com/koreanbots/py-sdk) 공식지원되는 패키지를 다운받으세요__**   
+**빌드 0.5.1 이후에는 아카이브로 돌릴것이며, 지원을 장담해드릴수 없습니다.**  
+**중요 크래쉬 부분은 아카이브를 풀고 수정 할것이지만, 이후 기능업데이트는 거의 없을것입니다.**  
+
+
 [![Build Status](https://travis-ci.com/SaidBySolo/DBKR-API-Python.svg?branch=master)](https://travis-ci.com/SaidBySolo/DBKR-API-Python)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/dbkrpy)](https://pypi.org/project/dbkrpy/)
 
@@ -239,6 +243,10 @@ def setup(bot):
 ```
 
 ## Patch note
+
+### 0.5.1
+
+* API 주소변경
 
 ### 0.5.0
 

@@ -246,7 +246,7 @@ def setup(bot):
 
 ### 0.5.1
 
-* API 주소변경
+* API 주소변경(Thx to chaemoong)
 
 ### 0.5.0
 

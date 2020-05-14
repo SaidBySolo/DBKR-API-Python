@@ -1,4 +1,4 @@
-mainurl = "https://api.koreanbots.cf"
+mainurl = "https://api.koreanbots.dev"
 PostURL = {
     'dbkrpostguild': f'{mainurl}/bots/servers',
     'dbkrsearch': f'{mainurl}/bots/search',    

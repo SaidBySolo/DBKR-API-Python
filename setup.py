@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="dbkrpy",
-    version="0.5.1",
+    version="0.5.2",
     license='MIT',
     author="Ryu ju heon",
     author_email="SaidBySolo@gmail.com",
@@ -20,5 +20,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent"
     ],
-    python_requires='>=3.7'
+    python_requires='>=3.6'
 )

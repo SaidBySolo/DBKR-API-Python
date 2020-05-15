@@ -244,6 +244,10 @@ def setup(bot):
 
 ## Patch note
 
+### 0.5.2
+
+* 파이썬 3.6지원
+
 ### 0.5.1
 
 * API 주소변경(Thx to chaemoong)

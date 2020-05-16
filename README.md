@@ -236,7 +236,7 @@ class DBKRChkVote(commands.Cog):
         userid = "user id"
         info = await dbkrpy.CheckVote.get_response(token,userid)
         dbkr = dbkrpy.CheckVote(info)
-        await ctx.send(dbkr)
+        await ctx.send(dbkr.check)
 
 def setup(bot):
     bot.add_cog(DBKRChkVote(bot))

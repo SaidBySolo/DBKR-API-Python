@@ -1,7 +1,7 @@
 # DBKR-API-Python
 
 **__파이썬 공식 SDK가 나왔습니다. [링크](https://github.com/koreanbots/py-sdk) 공식지원되는 패키지를 다운받으세요__**   
-**빌드 0.5.1 마이너 업데이트만 할 예정입니다., 지원을 장담해드릴수 없습니다.**   
+**빌드 0.5.1 이후에는 마이너 업데이트만 할 예정입니다. 지원을 장담해드릴수 없습니다.**   
 
 
 [![Build Status](https://travis-ci.com/SaidBySolo/DBKR-API-Python.svg?branch=master)](https://travis-ci.com/SaidBySolo/DBKR-API-Python)

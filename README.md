@@ -190,7 +190,7 @@ class DBKRinfo(commands.Cog):
 
     async def getinfo(self, ctx):
         info = await dbkrpy.GetById.get_response(538659580855451648)
-        dbkr = dbkrpy.DBKRGetById(info)
+        dbkr = dbkrpy.GetById(info)
         await ctx.send(dbkr.id)
 
 def setup(bot):
